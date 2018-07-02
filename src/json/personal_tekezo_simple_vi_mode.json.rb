@@ -20,6 +20,8 @@ def main
                                     generate_simple_vi_mode("h", "left_arrow",  $simultaneous_threshold_milliseconds),
                                     generate_simple_vi_mode("l", "right_arrow", $simultaneous_threshold_milliseconds),
                                     generate_simple_vi_mode("f", "fn",          $simultaneous_threshold_milliseconds),
+                                    generate_simple_vi_mode("s", "return_or_enter",        $simultaneous_threshold_milliseconds),
+                                    generate_simple_vi_mode("g", "delete_or_backspace",        $simultaneous_threshold_milliseconds)
                                   ].flatten,
                                 },
                               ],
@@ -56,7 +58,7 @@ def generate_simple_vi_mode(from_key_code, to_key_code, simultaneous_threshold_m
       "from" => {
         "simultaneous" => [
           {
-            "key_code" => "s",
+            "key_code" => "d",
           },
           {
             "key_code" => from_key_code,
